@@ -2,119 +2,894 @@
 
 
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>QuickBite | Food Delivery</title>
+    <title>TuneHub - Music Discovery</title>
 
-<style>
+    <style>
 
-    /* ===== GENERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    html {
-        scroll-behavior: smooth;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: white;
+        }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f8f8f8;
-        color: #222;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
 
-    /* ===== HEADER ===== */
+        /* HEADER */
 
-    header {
-        background-color: white;
-        padding: 20px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
+        header {
+            background: #181818;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #ff4b2b;
-    }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1ed760;
+        }
 
-    nav {
-        display: flex;
-        gap: 25px;
-        align-items: center;
-    }
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-    nav a {
-        color: #333;
-        font-size: 16px;
-    }
+        nav a {
+            color: #ddd;
+        }
 
-    nav a:hover {
-        color: #ff4b2b;
-    }
-
-    .cart {
-        background-color: #ff4b2b;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 20px;
-    }
+        nav a:hover {
+            color: #1ed760;
+        }
 
 
-    /* ===== HERO ===== */
+        /* HERO */
 
-    .hero {
-        min-height: 550px;
-        padding: 70px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 40px;
-        background: linear-gradient(
-            135deg,
-            #fff0eb,
-            #ffffff
-        );
-    }
+        .hero {
+            min-height: 500px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(
+                135deg,
+                #151515,
+                #202020
+            );
+        }
 
-    .hero-content {
-        max-width: 600px;
-    }
+        .hero-content {
+            max-width: 600px;
+        }
 
-    .hero-content h1 {
-        font-size: 52px;
-        line-height: 1.15;
-        margin-bottom: 20px;
-    }
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
 
-    .hero-content h1 span {
-        color: #ff4b2b;
-    }
+        .hero-content h1 span {
+            color: #1ed760;
+        }
 
-    .hero-content p {
-        color: #666;
-        font-size: 18px;
-        line-height: 1.7;
-```
+        .hero-content p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .explore-button {
+            display: inline-block;
+            background: #1ed760;
+            color: #000;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .explore-button:hover {
+            background: #18b950;
+        }
+
+        .music-circle {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: #1ed760;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+            box-shadow: 0 0 80px rgba(30, 215, 96, 0.3);
+        }
+
+
+        /* SEARCH */
+
+        .search-section {
+            padding: 35px 7%;
+            background: #181818;
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: auto;
+            display: flex;
+            background: #252525;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 16px 20px;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            border: none;
+            padding: 0 25px;
+            background: #1ed760;
+            font-weight: bold;
+        }
+
+
+        /* COMMON SECTION */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 8px;
+        }
+
+
+        /* SONGS */
+
+        .songs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .song-card {
+            background: #181818;
+            padding: 18px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .song-card:hover {
+            transform: translateY(-6px);
+            background: #222;
+        }
+
+        .song-image {
+            height: 180px;
+            background: #292929;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .song-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .song-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .song-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .play-button {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: #1ed760;
+            font-size: 16px;
+        }
+
+
+        /* ARTISTS */
+
+        .artists {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+
+        .artist {
+            text-align: center;
+        }
+
+        .artist-image {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            border-radius: 50%;
+            background: #292929;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .artist p {
+            color: #999;
+            margin-top: 5px;
+        }
+
+
+        /* CATEGORIES */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            padding: 35px 20px;
+            border-radius: 15px;
+            background: #181818;
+            text-align: center;
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #888;
+            font-size: 14px;
+        }
+
+
+        /* PLAYLIST */
+
+        .playlist {
+            background: #181818;
+            padding: 35px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .playlist h2 {
+            margin-bottom: 10px;
+        }
+
+        .playlist p {
+            color: #999;
+        }
+
+        .playlist-button {
+            background: #1ed760;
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #080808;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #888;
+            line-height: 1.8;
+        }
+
+        footer a {
+            display: block;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .songs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .artists {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .music-circle {
+                width: 240px;
+                height: 240px;
+                font-size: 110px;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+
+            .songs {
+                grid-template-columns: 1fr;
+            }
+
+            .artists {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .playlist {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            🎧 TuneHub
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#songs">Songs</a>
+
+            <a href="#artists">Artists</a>
+
+            <a href="#categories">Categories</a>
+
+            <a href="#playlist">Playlist</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Discover your
+                <span>next favourite song.</span>
+            </h1>
+
+            <p>
+                Explore trending music, discover new artists
+                and create your perfect playlist with TuneHub.
+            </p>
+
+            <a href="#songs" class="explore-button">
+                Explore Music
+            </a>
+
+        </div>
+
+
+        <div class="music-circle">
+            🎵
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Search songs, artists or albums..."
+            >
+
+            <button>
+                🔍 Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SONGS -->
+
+    <section class="section" id="songs">
+
+        <div class="section-title">
+
+            <h2>🔥 Trending Songs</h2>
+
+            <p>
+                Listen to the songs everyone is enjoying.
+            </p>
+
+        </div>
+
+
+        <div class="songs">
+
+
+            <div class="song-card">
+
+                <div class="song-image">
+                    🎵
+                </div>
+
+                <div class="song-info">
+
+                    <div>
+
+                        <h3>Midnight Dreams</h3>
+
+                        <p>Arjun Music</p>
+
+                    </div>
+
+                    <button class="play-button">
+                        ▶
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="song-image">
+                    🎸
+                </div>
+
+                <div class="song-info">
+
+                    <div>
+
+                        <h3>Lost In Time</h3>
+
+                        <p>Neon Waves</p>
+
+                    </div>
+
+                    <button class="play-button">
+                        ▶
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="song-image">
+                    🎤
+                </div>
+
+                <div class="song-info">
+
+                    <div>
+
+                        <h3>Beautiful Life</h3>
+
+                        <p>Riya Sharma</p>
+
+                    </div>
+
+                    <button class="play-button">
+                        ▶
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="song-image">
+                    🎹
+                </div>
+
+                <div class="song-info">
+
+                    <div>
+
+                        <h3>Ocean Lights</h3>
+
+                        <p>Dream Beats</p>
+
+                    </div>
+
+                    <button class="play-button">
+                        ▶
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ARTISTS -->
+
+    <section class="section" id="artists">
+
+        <div class="section-title">
+
+            <h2>🎤 Popular Artists</h2>
+
+            <p>
+                Discover amazing artists.
+            </p>
+
+        </div>
+
+
+        <div class="artists">
+
+            <div class="artist">
+
+                <div class="artist-image">
+                    👨‍🎤
+                </div>
+
+                <h3>Arjun</h3>
+
+                <p>Artist</p>
+
+            </div>
+
+
+            <div class="artist">
+
+                <div class="artist-image">
+                    👩‍🎤
+                </div>
+
+                <h3>Riya</h3>
+
+                <p>Artist</p>
+
+            </div>
+
+
+            <div class="artist">
+
+                <div class="artist-image">
+                    🧑‍🎤
+                </div>
+
+                <h3>Rahul</h3>
+
+                <p>Artist</p>
+
+            </div>
+
+
+            <div class="artist">
+
+                <div class="artist-image">
+                    👨‍🎤
+                </div>
+
+                <h3>Dev</h3>
+
+                <p>Artist</p>
+
+            </div>
+
+
+            <div class="artist">
+
+                <div class="artist-image">
+                    👩‍🎤
+                </div>
+
+                <h3>Ananya</h3>
+
+                <p>Artist</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section" id="categories">
+
+        <div class="section-title">
+
+            <h2>🎼 Music Categories</h2>
+
+            <p>
+                Find music based on your mood.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category">
+
+                <div class="category-icon">
+                    😌
+                </div>
+
+                <h3>Chill</h3>
+
+                <p>Relax and enjoy peaceful music.</p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    ❤️
+                </div>
+
+                <h3>Romantic</h3>
+
+                <p>Music for special moments.</p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    🔥
+                </div>
+
+                <h3>Workout</h3>
+
+                <p>High-energy songs for workouts.</p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    🎉
+                </div>
+
+                <h3>Party</h3>
+
+                <p>Turn up the music and have fun.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAYLIST -->
+
+    <section class="section" id="playlist">
+
+        <div class="playlist">
+
+            <div>
+
+                <h2>❤️ Create Your Playlist</h2>
+
+                <p>
+                    Save your favourite songs and enjoy them anytime.
+                </p>
+
+            </div>
+
+            <a href="#songs" class="playlist-button">
+                Start Listening
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>🎧 TuneHub</h3>
+
+                <p>
+                    Discover music. Find artists.
+                    Create memories.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="#songs">Songs</a>
+
+                <a href="#artists">Artists</a>
+
+                <a href="#categories">Categories</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Support</h3>
+
+                <a href="#">Help Center</a>
+
+                <a href="#">Privacy</a>
+
+                <a href="#">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 TuneHub. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
